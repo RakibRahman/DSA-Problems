@@ -18,6 +18,7 @@ console.log(reverseInt(-31));
 
 const reverseNumber = (number) => {
     let reverse = 0;
+    if (number < 0) return "Enter positive number";
     while (number) {
         let remainder = number % 10;
         reverse = reverse * 10 + remainder;
@@ -28,3 +29,4 @@ const reverseNumber = (number) => {
 
 // console.log(reverseNumber(404));
 console.log(reverseNumber(123));
+console.log(reverseNumber(-123));
