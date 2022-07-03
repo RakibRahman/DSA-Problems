@@ -57,9 +57,7 @@ class HashTable {
 
         // O(n)
 
-        const item = this.table[index].find((val) => val[0] === key);
-
-        return item[1];
+        return this.table[index].find((val) => val[0] === key)[1];
 
         // return item
     }
@@ -102,14 +100,18 @@ const ht = new HashTable();
 ht.set("abc", 55);
 ht.set("cab", 1505);
 ht.set("bca", 155);
+ht.set("ccc", ["a", " b", " c"]);
 ht.set("sakib", "Car1");
 ht.set("sakib", "Car2");
 ht.set("sakib", "Car3");
-// console.log(ht.get('abc'));
-console.log(ht.get("sakib"));
 console.log(ht.get("cab"));
+// console.log(ht.get("sakib"));
+// console.log(ht.get("cab"));
 ht.remove("bca");
+ht.remove("sakib");
 
-ht.display();
+// ht.display();
 
 console.log(ht.size);
+console.log(ht.loadFactor);
+console.log(ht.table.length);
