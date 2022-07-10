@@ -15,18 +15,21 @@ class HashTable {
 
     set(key, value) {
         const index = this.hash(key);
-        // chaining method to avoid index/hash
+        // chaining method to avoid index/hash collision
         if (this.table[index]) {
             const item = this.table[index].find((x) => x[0] === key);
             if (item) {
+                console.log(item);
+                console.log("value updated");
                 //update value of existing key
                 item[1] = value;
             } else {
+                console.log("pushed to linked list");
                 this.table[index].push([key, value]);
             }
         } else {
             // if no key found , set new key.value
-
+            console.log("new value with unique idx");
             this.table[index] = [[key, value]];
         }
 
@@ -98,20 +101,13 @@ class HashTable {
 
 const ht = new HashTable();
 ht.set("abc", 55);
+ht.set("acb", 444);
+
 ht.set("cab", 1505);
-ht.set("bca", 155);
-ht.set("ccc", ["a", " b", " c"]);
-ht.set("sakib", "Car1");
-ht.set("sakib", "Car2");
-ht.set("sakib", "Car3");
-console.log(ht.get("cab"));
-// console.log(ht.get("sakib"));
-// console.log(ht.get("cab"));
-ht.remove("bca");
-ht.remove("sakib");
+ht.set("aaa", "rakib");
 
-// ht.display();
+ht.display();
 
-console.log(ht.size);
-console.log(ht.loadFactor);
-console.log(ht.table.length);
+// console.log(ht.size);
+// console.log(ht.loadFactor);
+// console.log(ht.table.length);
