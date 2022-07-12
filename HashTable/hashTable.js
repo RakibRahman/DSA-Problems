@@ -105,9 +105,9 @@ ht.set("acb", 444);
 
 ht.set("cab", 1505);
 ht.set("aaa", "rakib");
-
-ht.display();
-
+ht.set(1, 55656);
+// ht.display();
+console.log(ht.get(1));
 // console.log(ht.size);
 // console.log(ht.loadFactor);
 // console.log(ht.table.length);
