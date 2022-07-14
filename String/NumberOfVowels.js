@@ -10,6 +10,8 @@ const vowelsCount = (str) => {
     }
     return `Total vowels ${count}-${max}`;
 };
+//? Time Complexity: O(n^2)
+//? Space Complexity: O(n)
 
 const vowelsCountV2 = (str) => {
     let vowelCount = {};
