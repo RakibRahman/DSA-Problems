@@ -33,3 +33,18 @@ function logFunc(n) {
 
 console.log(logFunc(8));
 ```
+
+function nlogNFunc(n) {
+let y = n;
+while (n > 1) {
+n = Math.floor(n / 2);
+console.log("---", y);
+
+        for (let i = 1; i <= y; i++) {
+            console.log(i);
+        }
+    }
+
+}
+
+console.log(nlogNFunc(4));
