@@ -1,3 +1,6 @@
+Big O notation measures the worst-case runtime.
+We need to know just how poorly our algorithm will perform so we can compare it to other solutions.
+
 -   O(n^2)
 
 ```|
@@ -32,8 +35,17 @@ function logFunc(n) {
 }
 
 console.log(logFunc(8));
+/*
+ 8/2 = 4
+ 4/2 = 2
+ 2/2 = 1
+-----------
+ 1/2 = 0 return "Done"
+
+ */
 ```
 
+```
 function nlogNFunc(n) {
 let y = n;
 while (n > 1) {
@@ -48,3 +60,11 @@ console.log("---", y);
 }
 
 console.log(nlogNFunc(4));
+/*
+ while loop = O(log(n))
+ for loop = O(n)
+---------------------
+while loop + for loop = O( nlogNFunc(n) )
+
+ */
+```
