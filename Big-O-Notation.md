@@ -68,3 +68,36 @@ while loop + for loop = O( nlogNFunc(n) )
 
  */
 ```
+
+O(n!)
+
+```
+function factorial(n) {
+    if (n === 0) {
+        // console.log(n);
+        console.log("end of execution");
+        return;
+    }
+    for (let i = 0; i < n; i++) {
+        factorial(n - 1);
+        console.log(n);
+    }
+}
+
+console.log(factorial(3));
+// Any algorithm that calculates all permutation of a given array is O(N!).
+
+```
+
+# O(2^n)
+
+```
+function fib(n) {
+    if (n === 0) return 0;
+    if (n === 1) return 1;
+
+    return fib(n - 1) + fib(n - 2);
+}
+
+console.log(fib(4));
+```
