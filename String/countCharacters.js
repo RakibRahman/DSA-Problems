@@ -18,7 +18,17 @@ const countCharacters = (str) => {
 // time complexity: O(n)
 // space complexity: O(n)
 
-console.log(countCharacters("0001222233"));
-console.log(countCharacters("hel lo"));
-console.log(countCharacters("akatsuki"));
-console.log(countCharacters("javascript"));
+// console.log(countCharacters("0001222233"));
+// console.log(countCharacters("hel lo"));
+// console.log(countCharacters("akatsuki"));
+// console.log(countCharacters("javascript"));
+
+let o = {};
+for (let i of "rrakib") {
+    if (i in o) {
+        o[i] = o[i] + 1 || 1;
+    } else {
+        o[i] = 1;
+    }
+}
+console.log(o);
