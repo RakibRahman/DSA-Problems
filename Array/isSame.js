@@ -36,20 +36,41 @@ const isSameV2 = (arr1, arr2) => {
             console.log(arr2);
         }
     }
-
-    let hashMapOne = {};
-    let hashMapTwo = {};
-
-    // for (let elm of arr1) {
-    //     hashMapOne[elm] = elm;
-    // }
-    // for (let elm of arr2) {
-    //     hashMapTwo[elm] = elm;
-    // }
-    // for (let val in hashMapOne) {
-    //     console.log(val);
-    // }
-    // return { hashMapOne, hashMapTwo };
     return true;
 };
-console.log(isSameV2(arr1, arr2));
+
+//? Time Complexity: O(n*m)
+//? Space Complexity: O(1)
+
+// console.log(isSameV2(arr1, arr2));
+// console.log(isSameV2([1, 4, 3, 4], [1, 3, 4, 4]));
+
+const isSameV3 = (arr1, arr2) => {
+    if (arr1.length !== arr1.length) return false;
+
+    let frequencyCounter = {};
+    let frequencyCounter2 = {};
+
+    for (let val of arr1) {
+        frequencyCounter[val] = frequencyCounter[val] + 0 || 1;
+    }
+    for (let val of arr2) {
+        frequencyCounter2[val] = frequencyCounter2[val] + 0 || 1;
+    }
+
+    for (let k in frequencyCounter) {
+        if (
+            !k in frequencyCounter2 ||
+            frequencyCounter[k] !== frequencyCounter2[k]
+            // this conditions to loop through all elements
+        ) {
+            return false;
+        }
+    }
+    return true;
+};
+
+//? Time Complexity: O(n)
+//? Space Complexity:O(n)
+console.log(isSameV3([1, 4, 3, 4], [1, 3, 4, 4]));
+console.log(isSameV3([1, 5, 3, 4], [1, 3, 4, 4]));
